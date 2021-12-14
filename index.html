@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BitTracker" />
+    <meta property="og:description" content="Bitcoin value and trade volume tracker." />
+    <meta property="og:url" content="https://johuotar.github.io/BitTracker/" />
+    <meta property="og:site_name" content="BitTracker" />
+   
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+
+    <title>BitTracker</title>
+</head>
+
+<body>
+    <!-- Navigation top bar -->
+    <nav class="centered">
+        <div id="navbar">
+            <h1>BitTracker - BitCoin price and trading volume tracking tool</h1>
+        </div>
+    </nav><hr>
+    <!-- Navigation top bar ends -->
+
+    <!-- Select time range -->
+    <div class="time padding_top_small">
+        <p>Choose time range:</p>
+        <div class="rows">
+            <div class="selection">
+                <label for="start">Start date:</label>
+                <input type="date" id="startdate" name="start"
+                    value="" min="2013-04-28" max="2027-01-01">
+            </div>
+
+            <div class="selection">
+                <label for="end">End date:</label>
+                <input type="date" id="enddate" name="end"
+                    value="" min="2013-04-28" max="2027-01-01">
+            </div>
+        </div>
+
+        <br><br>
+        <button class="interactable" id="getDataButton">Get data</button>
+    </div>
+        <!-- Time selection ends -->
+
+    <div class="padding">
+    <div class="rows">
+        <!-- Errors will be shown in error element -->
+        <p id="error_ele" class="result"></p>
+        <!-- Results -->
+        <p id="bearish_ele" class="result">
+            Longest bearish, AKA downwards trend in days during the selected time period is X days.
+        </p>
+
+        <p id="volume_value_ele" class="result">
+            Highest trading volume in euros during selected time period is X € on day Y.
+        </p>
+
+        <p id="best_dates_ele" class="result">
+            Best theoretical days to buy and sell in the selected time period are X and Y.
+        </p>
+    </div>
+    </div>
+
+    <div class="chart">
+        <p class="desc">
+            Bitcoin value during selected time period.
+        </p>
+        <div>
+            <canvas id="ChartCanvas"></canvas>
+        </div>
+
+        <br>
+        <p class="desc">
+            Bitcoin trading volume during selected time period.
+        </p>
+        <div>
+            <canvas id="VolumeChartCanvas"></canvas>
+        </div>
+
+        <!-- Results end -->
+
+        <!-- Footer -->
+        <div class="padding_top_medium">
+            <hr>
+            <footer class = "footer">
+                <div>
+                <p>Bitcoin Tracker 2021 - This website does not use cookies. All rights belong to their respective owners.</p>
+                </div>
+            </footer>
+        </div>
+        <!-- Footer ends-->
+    </div>
+
+<!-- Chart.js plugin for showing price history, webpack bundle -->
+<script src="dist/bundle.js"></script>
+
+</body>
+</html>
