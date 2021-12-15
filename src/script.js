@@ -111,6 +111,9 @@ import Chart from 'chart.js/auto';
     const elementBearishTrend = document.getElementById("bearish_ele");
     const elementTradingVolume = document.getElementById("volume_value_ele");
     const elementBuySellDays = document.getElementById("best_dates_ele");
+    const elementBearishSummary = document.getElementById("bearish_summary");
+    const elementTradingSummary = document.getElementById("volume_value_summary");
+    const elementBuySellSummary = document.getElementById("best_dates_summary");
     const address = "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=eur&from="
     // Time selection elements
     let startDateElement = document.getElementById('startdate');
@@ -329,14 +332,18 @@ import Chart from 'chart.js/auto';
     function updateInsights(insight1Array, insight2Array, insight3Array) {
         // Set longest bearish trend to the element 1
         elementBearishTrend.innerHTML = "Longest bearish, AKA downwards trend in days during the selected time period is " + insight1Array[0] + " days, starting from " + insight1Array[1] + " and ending on " + insight1Array[2];
+        elementBearishSummary.innerHTML = insight1Array[0] + " days";
         // Set day with highest trading volume to element 2
         elementTradingVolume.innerHTML = "Highest trading volume in Euros during the selected time period was on " + insight2Array[0] + " with value of " + insight2Array[1];
+        elementTradingSummary.innerHTML = insight2Array[1];
         // Set best days to buy and sell Bitcoin to element 3
         if (insight3Array[2] <= 1.0) {
             elementBuySellDays.innerHTML = "Bitcoin's price did not increase during selected time period.";
+            elementBuySellSummary.innerHTML = "None";
         }
         else {
             elementBuySellDays.innerHTML = "Best days to buy and sell during the selected time period was to buy on " + insight3Array[0] + " and sell on " + insight3Array[1] + " with price being multiplied by " + insight3Array[2];
+            elementBuySellSummary.innerHTML = insight3Array[0] + " and " + insight3Array[1];
         }
     }
 

@@ -53,21 +53,48 @@
         <!-- Time selection ends -->
 
     <div class="padding">
+        <div class="rows">
+            <!-- Quick results -->
+            <div class="box">
+                <p class="result">Bearish trend:</p>
+                <p id="bearish_summary" class="result-large">
+                    X days.
+                </p>
+            </div>
+            <div class="box">
+                <p class="result">Trading volume:</p>
+                <p id="volume_value_summary" class="result-large">
+                    Highest trading volume in euros X € on day Y.
+                </p>
+            </div>
+            <div class="box">
+                <p class="result">Buy and sell:</p>
+                <p id="best_dates_summary" class="result-large">
+                    Best days to buy and sell X and Y.
+                </p>
+            </div>
+        </div>
+        <div class="rows">
+            <!-- Errors will be shown in error element -->
+            <p id="error_ele" class="result"></p>
+        </div>
     <div class="rows">
-        <!-- Errors will be shown in error element -->
-        <p id="error_ele" class="result"></p>
         <!-- Results -->
-        <p id="bearish_ele" class="result">
-            Longest bearish, AKA downwards trend in days during the selected time period is X days.
-        </p>
-
-        <p id="volume_value_ele" class="result">
-            Highest trading volume in euros during selected time period is X € on day Y.
-        </p>
-
-        <p id="best_dates_ele" class="result">
-            Best theoretical days to buy and sell in the selected time period are X and Y.
-        </p>
+        <div class="box">
+            <p id="bearish_ele" class="result">
+                Longest bearish, AKA downwards trend in days during the selected time period is X days.
+            </p>
+        </div>
+        <div class="box">
+            <p id="volume_value_ele" class="result">
+                Highest trading volume in euros during selected time period is X € on day Y.
+            </p>
+        </div>
+        <div class="box">
+            <p id="best_dates_ele" class="result">
+                Best theoretical days to buy and sell in the selected time period are X and Y.
+            </p>
+        </div>
     </div>
     </div>
 

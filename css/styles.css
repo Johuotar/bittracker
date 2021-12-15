@@ -13,7 +13,7 @@
 .rows {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 12px;
 }
 
@@ -54,8 +54,21 @@
   padding: 5px;
 }
 
+.box {
+  box-shadow: 5px 10px #888888;
+  background-color: pink;
+}
+
 .result {
   font-size: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.result-large {
+  font-size: 26px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .padding_top_small {
