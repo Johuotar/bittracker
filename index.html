@@ -31,7 +31,7 @@
     <!-- Navigation top bar ends -->
 
     <!-- Select time range -->
-    <div class="time padding_top_small">
+    <div class="time">
         <p>Choose time range:</p>
         <div class="rows">
             <div class="selection">
@@ -58,19 +58,19 @@
             <div class="box">
                 <p class="result">Bearish trend:</p>
                 <p id="bearish_summary" class="result-large">
-                    X days.
+                    X
                 </p>
             </div>
             <div class="box">
                 <p class="result">Trading volume:</p>
                 <p id="volume_value_summary" class="result-large">
-                    Highest trading volume in euros X € on day Y.
+                    X €
                 </p>
             </div>
             <div class="box">
                 <p class="result">Buy and sell:</p>
                 <p id="best_dates_summary" class="result-large">
-                    Best days to buy and sell X and Y.
+                    X and Y
                 </p>
             </div>
         </div>
@@ -99,21 +99,24 @@
     </div>
 
     <div class="chart">
-        <p class="desc">
-            Bitcoin value during selected time period.
-        </p>
-        <div>
-            <canvas id="ChartCanvas"></canvas>
+        <div class="chart-left">
+            <p class="desc">
+                Bitcoin value during selected time period.
+            </p>
+            <div>
+                <canvas id="ChartCanvas"></canvas>
+            </div>
         </div>
-
         <br>
-        <p class="desc">
-            Bitcoin trading volume during selected time period.
-        </p>
-        <div>
-            <canvas id="VolumeChartCanvas"></canvas>
+        <div class="chart-right">
+            <p class="desc">
+                Bitcoin trading volume during selected time period.
+            </p>
+            <div>
+                <canvas id="VolumeChartCanvas"></canvas>
+            </div>
         </div>
-
+    </div>
         <!-- Results end -->
 
         <!-- Footer -->
@@ -126,7 +129,7 @@
             </footer>
         </div>
         <!-- Footer ends-->
-    </div>
+    
 
 <!-- Chart.js plugin for showing price history, webpack bundle -->
 <script src="dist/bundle.js"></script>

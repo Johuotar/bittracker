@@ -316,12 +316,15 @@ import Chart from 'chart.js/auto';
                 }
             }
         }
-        let buyDay, SellDay;
+        highestMultiplier = highestMultiplier.toPrecision(6);
+        let buyDay, SellDay, buyDate, SellDate;
         let newDate = new Date(closestTimePoints[startEndDate[0]]);
-        buyDay = newDate.toDateString()
+        buyDay = newDate.toUTCString()
+        buyDate = newDate.toDateString()
         newDate = new Date(closestTimePoints[startEndDate[1]]);
-        SellDay = newDate.toDateString()
-        return [buyDay, SellDay, highestMultiplier]
+        SellDay = newDate.toUTCString()
+        SellDate = newDate.toDateString()
+        return [buyDay, SellDay, highestMultiplier, buyDate, SellDate]
     }
 
     function updateCharts() {
@@ -343,7 +346,7 @@ import Chart from 'chart.js/auto';
         }
         else {
             elementBuySellDays.innerHTML = "Best days to buy and sell during the selected time period was to buy on " + insight3Array[0] + " and sell on " + insight3Array[1] + " with price being multiplied by " + insight3Array[2];
-            elementBuySellSummary.innerHTML = insight3Array[0] + " and " + insight3Array[1];
+            elementBuySellSummary.innerHTML = insight3Array[3] + " and " + insight3Array[4];
         }
     }
 

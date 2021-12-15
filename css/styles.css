@@ -52,23 +52,42 @@
 
 .chart {
   padding: 5px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-content: center;
+}
+
+.chart-left {
+  width: 50%;
+}
+
+.chart-right {
+  width: 50%;
 }
 
 .box {
-  box-shadow: 5px 10px #888888;
-  background-color: pink;
+  box-shadow: 4px 8px #888888;
+  background-color: lightgrey;
 }
 
 .result {
   font-size: 18px;
   padding-left: 20px;
   padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .result-large {
-  font-size: 26px;
+  font-size: 24px;
   padding-left: 20px;
   padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .padding_top_small {
