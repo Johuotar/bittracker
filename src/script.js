@@ -318,9 +318,9 @@ import Chart from 'chart.js/auto';
         }
         let buyDay, SellDay;
         let newDate = new Date(closestTimePoints[startEndDate[0]]);
-        buyDay = newDate.toUTCString()
+        buyDay = newDate.toDateString()
         newDate = new Date(closestTimePoints[startEndDate[1]]);
-        SellDay = newDate.toUTCString()
+        SellDay = newDate.toDateString()
         return [buyDay, SellDay, highestMultiplier]
     }
 
